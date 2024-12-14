@@ -11,14 +11,19 @@
 # print(data['data'][2]['weaponStats']['fireRate'])
 
 
-from flask import Flask
 
-app=Flask(__name__)
+# @app.route('/')
+# def hello():
+#     return 'Hello World!'
+
+from flask import Flask, redirect, url_for, request, render_template
+app = Flask(__name__)
+
 
 @app.route('/')
-def hello():
-    return 'Hello World!'
+def home():
+    return render_template('basic.html')
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

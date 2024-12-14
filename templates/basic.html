@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            margin-top: 50px;
+        }
+
+        /* Container to center the buttons horizontally */
+        .button-container {
+            display: flex;
+            justify-content: center;  /* Align buttons horizontally */
+            gap: 20px;  /* Space between buttons */
+            margin-top: 30px;
+        }
+
+        /* Styling for individual buttons */
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Flask Application!</h1>
+    <p>This is the basic HTML page served by Flask.</p>
+    <p>This text is AI generated.</p>
+
+    <!-- Button container -->
+    <div class="button-container">
+        <button class="btn">Button 1</button>
+        <button class="btn">Button 2</button>
+        <button class="btn">Button 3</button>
+        <button class="btn">Button 4</button>
+        <button class="btn">Button 5</button>
+    </div>
+</body>
+</html>
