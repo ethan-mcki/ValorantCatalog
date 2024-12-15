@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,12 +50,33 @@
 
     <!-- Button container -->
     <div class="button-container">
-        <button class="btn">Pistols</button>
-        <button class="btn">Shotguns</button>
-        <button class="btn">Sub Machines</button>
-        <button class="btn">Assault Rifles</button>
-        <button class="btn">Light Machine Guns</button>
-        <button class="btn">Snipers</button>
+        <form action="{{ url_for('knives')}}" method="get">
+            <button class="btn">Knives</button>
+        </form>
+        
+        <form action="{{ url_for('pistols')}}" method="get">
+            <button class="btn">Pistols</button>
+        </form>
+        
+        <form action="{{ url_for('shotguns')}}" method="get">
+            <button class="btn">Shotguns</button>
+        </form>
+        
+        <form action="{{ url_for('subs')}}" method="get">
+            <button class="btn">Sub Machines</button>
+        </form>
+        
+        <form action="{{ url_for('ar') }}" method="get">
+            <button class="btn" type="submit">Assault Rifles</button>
+        </form>
+
+        <form action="{{ url_for('lmg')}}" method="get">
+            <button class="btn">Light Machine Guns</button>
+        </form>
+        
+        <form action="{{ url_for('snipers')}}" method="get">
+            <button class="btn">Snipers</button>
+        </form>
     </div>
 </body>
 </html>
