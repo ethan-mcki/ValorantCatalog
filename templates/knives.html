@@ -18,4 +18,16 @@
         </style>
     </head>
     <h1>Knife Specs</h1>
+    <ul>
+        {% for weapon in weapons %}
+            <li>
+                <strong>{{ weapon.displayName }}</strong><br>
+                Type: {{ weapon.weaponType }}<br>
+                Damage: {{ weapon.weaponStats.damageRanges[0].head }} (Headshot), 
+                        {{ weapon.weaponStats.damageRanges[0].body }} (Body)<br>
+            </li>
+        {% else %}
+            <li>No weapons available at the moment.</li>
+        {% endfor %}
+    </ul>
 </html>
