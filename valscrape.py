@@ -27,6 +27,9 @@ def weapon_list():
         weapons = weapon_data['data']
     else:
         weapons = []
+    for weapon in weapons:
+        if 'category' in weapon:
+            weapon['category'] = weapon['category'].replace("EEquippableCategory::", "")
     return weapons
 
 weapons = weapon_list()
@@ -41,6 +44,8 @@ weapons = weapon_list()
 # [7] = weaponStats
 # [8] = shopData
 # [9] = skins
+print(weapons[1]['weaponStats'])
+
 
 # Routes to each page, Pistols, Knives, etc.
 @app.route('/')

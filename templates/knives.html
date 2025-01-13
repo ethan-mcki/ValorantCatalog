@@ -20,12 +20,22 @@
     <h1>Knife Specs</h1>
     <ul>
         {% for weapon in weapons %}
-            <li>
-                <strong>{{ weapon.displayName }}</strong><br>
-                Type: {{ weapon.weaponType }}<br>
-                Damage: {{ weapon.weaponStats.damageRanges[0].head }} (Headshot), 
-                        {{ weapon.weaponStats.damageRanges[0].body }} (Body)<br>
-            </li>
+            {% if weapon.category == 'Melee' %}
+                <li>
+                    <strong>{{ weapon.displayName }}</strong><br>
+                    Type: {{ weapon.category }}<br>
+                    {% if weapon.weaponStats and weapon.weaponStats.damageRanges %}
+                        {% set damageRange = weapon.weaponStats.damageRanges %}
+                        Damage: 
+                        {{ damageRange[0].headDamage if damageRange[0].headDamage else 'N/A' }} (Headshot), 
+                        {{ damageRange[0].bodyDamage if damageRange[0].bodyDamage else 'N/A' }} (Body)
+                    {% else %}
+                        Damage: Data not available
+                    {% endif %}
+                </li>
+            {% else %}
+            {% endif %}
+            
         {% else %}
             <li>No weapons available at the moment.</li>
         {% endfor %}

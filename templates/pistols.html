@@ -17,5 +17,27 @@
             }
         </style>
     </head>
-    <h1>Please Choose A Pistol</h1>
+    <h1>Pistol Specs</h1>
+    <ul>
+        {% for weapon in weapons %}
+            {% if weapon.category == 'Sidearm' %}
+                <li>
+                    <strong>{{ weapon.displayName }}</strong><br>
+                    Type: {{ weapon.category }}<br>
+                    {% if weapon.weaponStats and weapon.weaponStats.damageRanges %}
+                        {% set damageRange = weapon.weaponStats.damageRanges %}
+                        Damage: 
+                        {{ damageRange[0].headDamage if damageRange[0].headDamage else 'N/A' }} (Headshot), 
+                        {{ damageRange[0].bodyDamage if damageRange[0].bodyDamage else 'N/A' }} (Body)
+                    {% else %}
+                        Damage: Data not available
+                    {% endif %}
+                </li>
+            {% else %}
+            {% endif %}
+            
+        {% else %}
+            <li>No weapons available at the moment.</li>
+        {% endfor %}
+    </ul>
 </html>
