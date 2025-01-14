@@ -44,7 +44,7 @@ weapons = weapon_list()
 # [7] = weaponStats
 # [8] = shopData
 # [9] = skins
-print(weapons[1]['weaponStats'])
+# print(weapons[1]['weaponStats'])
 
 
 # Routes to each page, Pistols, Knives, etc.

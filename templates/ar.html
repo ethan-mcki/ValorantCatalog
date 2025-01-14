@@ -22,13 +22,20 @@
         {% for weapon in weapons %}
             {% if weapon.category == 'Rifle' %}
                 <li>
-                    <strong>{{ weapon.displayName }}</strong><br>
-                    Type: {{ weapon.category }}<br>
+                    <h3><strong>{{ weapon.displayName }}</strong></h3>
+                    Type: {{ weapon.category }}<br><br>
                     {% if weapon.weaponStats and weapon.weaponStats.damageRanges %}
                         {% set damageRange = weapon.weaponStats.damageRanges %}
-                        Damage: 
-                        {{ damageRange[0].headDamage if damageRange[0].headDamage else 'N/A' }} (Headshot), 
-                        {{ damageRange[0].bodyDamage if damageRange[0].bodyDamage else 'N/A' }} (Body)
+                        <strong>Damage:</strong><br>
+                        {{ damageRange[0].rangeStartMeters }}-{{damageRange[0].rangeEndMeters }} Meters<br>
+                        <em>Headshot: </em>{{ damageRange[0].headDamage if damageRange[0].headDamage else 'N/A' }}, 
+                        <em>Body: </em>{{ damageRange[0].bodyDamage if damageRange[0].bodyDamage else 'N/A' }}<br>
+                        {% if damageRange|length > 1 %}
+                            {{ damageRange[1].rangeStartMeters if damageRange[1].rangeStartMeters else 'N/A' }}-{{damageRange[1].rangeEndMeters if damageRange[1].rangeEndMeters else 'N/A'}} Meters<br>
+                            <em>Headshot: </em>{{ damageRange[1].headDamage if damageRange[1].headDamage else 'N/A' }},
+                            <em>Body: </em>{{ damageRange[1].bodyDamage if damageRange[1].bodyDamage else 'N/A' }}
+                        {% endif %}
+                        
                     {% else %}
                         Damage: Data not available
                     {% endif %}
