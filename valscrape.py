@@ -44,7 +44,8 @@ weapons = weapon_list()
 # [7] = weaponStats
 # [8] = shopData
 # [9] = skins
-# print(weapons[1]['weaponStats'])
+print(weapons[1]['weaponStats'])
+print(weapons[1]['displayIcon'])
 
 
 # Routes to each page, Pistols, Knives, etc.
@@ -84,3 +85,18 @@ def snipers():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+# {% if weapon.weaponStats and weapon.weaponStats.damageRanges %}
+#                                 {% set damageRange = weapon.weaponStats.damageRanges %}
+#                                 <strong>Damage:</strong><br>
+#                                 {{ damageRange[0].rangeStartMeters }}-{{damageRange[0].rangeEndMeters }} Meters<br>
+#                                 <em>Headshot: </em>{{ damageRange[0].headDamage if damageRange[0].headDamage else 'N/A' }}, 
+#                                 <em>Body: </em>{{ damageRange[0].bodyDamage if damageRange[0].bodyDamage else 'N/A' }}<br>
+#                                 {% if damageRange|length > 1 %}
+#                                     {{ damageRange[1].rangeStartMeters if damageRange[1].rangeStartMeters else 'N/A' }}-{{damageRange[1].rangeEndMeters if damageRange[1].rangeEndMeters else 'N/A'}} Meters<br>
+#                                     <em>Headshot: </em>{{ damageRange[1].headDamage if damageRange[1].headDamage else 'N/A' }},
+#                                     <em>Body: </em>{{ damageRange[1].bodyDamage if damageRange[1].bodyDamage else 'N/A' }}<br>
+#                                 {% endif %}
+#                             {% endif %} 
