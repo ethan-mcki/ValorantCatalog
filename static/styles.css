@@ -1,5 +1,6 @@
 body {
-    background-color: silver;
+    background-color: #0f1923;
+    color: white;
 }
 
 h1 {
@@ -7,8 +8,7 @@ h1 {
     top: 0;
     padding: 10px 16px;
     text-align: center;
-    color: black;
-    background-color: silver;
+    background-color: #0f1923;
     width: relative;
     margin: 0 auto;
     border: none;
@@ -22,5 +22,6 @@ h1 {
 }
 
 img {
-    transform: scale(1.25);
+    width: 600px;
+    height: auto;
 }
